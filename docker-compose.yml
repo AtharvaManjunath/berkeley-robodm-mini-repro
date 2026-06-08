@@ -1,0 +1,8 @@
+services:
+  robot-bench:
+    build: .
+    image: robot-data-format-benchmark:latest
+    volumes:
+      - ./artifacts:/app/artifacts
+      - ${HOME}/tensorflow_datasets:/data/tensorflow_datasets
+    command: python -m robot_bench.cli run-all --config configs/synthetic.yaml --profile small

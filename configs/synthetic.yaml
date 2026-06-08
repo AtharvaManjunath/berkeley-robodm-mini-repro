@@ -1,0 +1,25 @@
+seed: 12345
+artifact_dir: artifacts
+memory_interval_sec: 0.05
+profiles:
+  small:
+    episodes_per_dataset: 3
+    max_steps_per_episode: 8
+    batch_size: 2
+    num_batches: 3
+    warmup_batches: 1
+    workers: 1
+  full:
+    episodes_per_dataset:
+    max_steps_per_episode:
+    batch_size: 4
+    num_batches: 10
+    warmup_batches: 2
+    workers: 1
+datasets:
+  - name: synthetic_tiny
+    source: synthetic
+    notes: tiny
+  - name: synthetic_multimodal
+    source: synthetic
+    notes: multimodal

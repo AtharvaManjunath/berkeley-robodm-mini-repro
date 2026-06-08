@@ -1,0 +1,55 @@
+seed: 12345
+artifact_dir: artifacts
+memory_interval_sec: 0.05
+allow_downloads: false
+allow_fallbacks: false
+max_download_gb: 25.0
+profiles:
+  small:
+    episodes_per_dataset: 32
+    max_steps_per_episode: 128
+    batch_size: 8
+    num_batches: 50
+    warmup_batches: 5
+    workers: 4
+  full:
+    episodes_per_dataset:
+    max_steps_per_episode:
+    batch_size: 8
+    num_batches: 200
+    warmup_batches: 5
+    workers: 4
+datasets:
+  - name: bridge
+    source: tfds
+    tfds_name: bridge
+    known_size_gb: 400.0
+    notes: Primary N=8 Robo-DM-style target; requires explicit public-data loader extension/cache.
+  - name: berkeley_cable_routing
+    source: tfds
+    tfds_name: berkeley_cable_routing
+    known_size_gb: 20.0
+  - name: nyu_door_opening_surprising_effectiveness
+    source: tfds
+    tfds_name: nyu_door_opening_surprising_effectiveness
+    known_size_gb: 20.0
+  - name: berkeley_autolab_ur5
+    source: tfds
+    tfds_name: berkeley_autolab_ur5
+    known_size_gb: 80.0
+  - name: nyu_franka_play_dataset_converted_externally_to_rlds
+    source: tfds
+    tfds_name: nyu_franka_play_dataset_converted_externally_to_rlds
+    known_size_gb: 80.0
+  - name: cmu_play_fusion
+    source: tfds
+    tfds_name: cmu_play_fusion
+    known_size_gb: 80.0
+  - name: bridge_data_msr
+    source: tfds
+    tfds_name: bridge_data_msr
+    known_size_gb: 80.0
+  - name: utokyo_xarm_pick_and_place_converted_externally_to_rlds
+    source: tfds
+    tfds_name: utokyo_xarm_pick_and_place_converted_externally_to_rlds
+    known_size_gb: 20.0
